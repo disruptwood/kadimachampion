@@ -673,11 +673,11 @@
 
 .index-header .logo-container {
   margin-left: auto; 
-  margin-right: 19rem; /* небольшой отступ от правого края */
+  margin-right: 24rem; /* небольшой отступ от правого края */
 }
 
 .animated-logo {
-  text-align: right;
+  text-align: right; 
 }
 
 .section-description {
@@ -750,54 +750,3 @@
   max-width: 831px;
 }
 
-/* Выравнивание строк логотипа */
-.small-animated-logo {
-  direction: rtl;
-  text-align: right;
-  line-height: 0.8;
-}
-
-/* Убираем отступы у строк логотипа */
-.small-animated-logo br + * {
-  display: inline-block;
-  margin-right: 0;
-  padding-right: 0;
-}
-
-.lost-illustration {
-  display: block;
-  margin: auto auto var(--after-lost-image-margin);
-  height: 40vh; /* increased from 30vh */
-  aspect-ratio: 979/404;
-  width: auto;
-  max-height: 500px; /* increased from 404px */
-  max-width: 90vw; /* ensure it doesn't overflow on small screens */
-}
-
-@media (max-width: 1000px) {
-  .lost-illustration {
-    height: 35vh; /* bigger than before but smaller than desktop */
-    aspect-ratio: 979/404;
-    max-height: 400px;
-    width: auto;
-    max-width: 85vw;
-  }
-}
-
-@media (max-width: 600px) {
-  .lost-illustration {
-    height: 30vh;
-    max-height: 300px;
-    width: auto;
-    max-width: 90vw;
-  }
-}
-
-@media (max-width: 400px) {
-  .lost-illustration {
-    height: 25vh;
-    max-height: 200px;
-    width: 90vw;
-    max-width: none;
-  }
-}
