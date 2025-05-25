@@ -1,1 +1,1 @@
-export const baseURL = 'https://shalom.kruzhok.io';
+export const baseURL = 'https://kadimachampion.netlify.app';

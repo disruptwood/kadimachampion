@@ -65,6 +65,7 @@ body.life {
   background-color: var(--detail-bg, #7d6779);
   color: var(--detail-color, #e5d1b8);
   position: relative;
+  width: 99vw;
 }
 
 .detail_type_changes {
@@ -193,6 +194,12 @@ body.life {
 .detail_type_changes .detail__content {
   aspect-ratio: 1393/1380;
 }
+/* 
+@media (max-width: 400px) {
+  .detail__quote {
+    width: 95vw !important;
+  }
+} */
 
 .detail__quote {
   left: 50%;
@@ -216,6 +223,7 @@ body.life {
   -ms-flex-direction: column;
   flex-direction: column;
   justify-content: center;
+  padding-left:20px !important; padding-right:20px !important;
 }
 
 .detail__quote-text {
@@ -224,6 +232,7 @@ body.life {
   font-weight: 400;
   margin-bottom: clamp(0.685rem, -0.004rem + 1.378vw, 1.25rem);
   text-align: center;
+  direction: rtl;
 }
 
 .detail__quote-name {
@@ -1589,4 +1598,50 @@ body.life {
 /* Кнопка меню слева */
 .menu-button {
   order: 1;
+}
+
+/* keep container logic from the previous step */
+.detail{
+  width:100%;
+  max-width:var(--page-max-width);
+  margin:0 auto;
+  box-sizing:border-box;
+}
+
+/* phone tweaks */
+@media (max-width:500px){
+  /* use the same 14 px padding you already defined for very small screens */
+  .detail{padding:24px 14px;}          /* overrides --padding-inside indirectly */
+  
+  /* zero inner padding to avoid double-padding */
+  .detail summary,
+  .detail__content{
+    padding-left:0;
+    padding-right:0;
+  }
+
+  /* let the heading wrap instead of pushing the grid wide */
+  .detail__title{
+    white-space:normal;        /* kill the nowrap */
+    overflow-wrap:anywhere;    /* break long Hebrew words if needed */
+  }
+}
+
+/* phones ≤ 379 px */
+@media (max-width: 380px) {
+
+  /* kill the grid, give full width to the heading */
+  .detail summary{
+    display:block;
+    width:100%;
+    padding-right:44px;   /* room for the arrow */
+    position:relative;
+  }
+
+
+  /* keep the heading readable */
+  .detail__title{
+    white-space:normal;
+    text-align:center;
+  }
 }
